@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :courses
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "home#index"
+  get '/courses', to:"courses#index"
+  get '/courses/:id', to:"courses#show"
+  get '/newcourse', to: "courses#new"
+  post '/newcourse', to: "courses#create"
 end

@@ -20,5 +20,10 @@
   <%= @course.school %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<p>
+  <strong>Calendar:</strong>
+  <ul>
+  <% @course.assignments.each do |a| %>
+    <li> <%= a.lecture_title %> </li>
+  <% end %>
+</p>
