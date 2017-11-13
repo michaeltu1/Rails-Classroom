@@ -10,7 +10,8 @@ end
 gem 'devise', '~> 4.3.0'
 gem 'carrierwave', '~> 1.2.1'
 gem 'annotate'
-
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
