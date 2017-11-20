@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <h1>Courses</h1>
 
@@ -30,4 +30,62 @@
 
 <br>
 
-<%= link_to 'New Course', new_course_path %>
+<%= link_to 'New Course', new_course_path %> -->
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">Rails Classroom</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <form class="form-inline my-2 my-lg-0">
+      <% if user_signed_in? %>
+      <a class="btn btn-outline-success my-2 my-sm-0" href="" role="button">Create Course</a>
+      <% else %>
+      <a class="btn btn-outline-success my-2 my-sm-0" href="/users/sign_in" role="button">Sign In</a>
+      <% end %>
+    </form>
+  </div>
+</nav>
+
+    <header class="masthead" style="background-image: url(/assets/book.jpg)">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Rails Classrooms</h1>
+              <span class="subheading">List of courses available on Rails Classroom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <% @courses.each do |c| %>
+          <div class="post-preview">
+            <h2 class="post-title">
+            <%= link_to "#{c.name}", course_path(c.id) %>
+              </h2>
+              <h3 class="post-subtitle">
+                School: <%= c.school %>
+                <br />
+                Instructor: <%= User.find(c.user_id).first_name %> <%= User.find(c.user_id).last_name %>
+                <br />
+                Semester: <%= c.semester %>
+                <br />
+                Class Time: <%=c.time %>
+              </h3>
+
+          </div>
+          <% end %>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <hr>
