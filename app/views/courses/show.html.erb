@@ -1,29 +1,124 @@
-<p id="notice"><%= notice %></p>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/courses"><%=@course.name%></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/courses">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/courses">New Assignments
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/courses">New Announcements
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="content" class="container">
 
-<p>
-  <strong>Semester:</strong>
-  <%= @course.semester %>
-</p>
+    <div class="page-header">
+      <h1>
+        <span class="content-title-brand"><%=@course.name%></span>
+      </h1>
+      <% if user_signed_in? %>
+      <p>Logged in as:
+        <%= current_user.email %>
+      </p>
+      <% end %>
 
-<p>
-  <strong>Time:</strong>
-  <%= @course.time %>
-</p>
+      <%=@course.semester%>
+      <br>
 
-<p>
-  <strong>School:</strong>
-  <%= @course.school %>
-</p>
+      Instructor: temp
+      <br>
+      <%=@course.time%>
+      <br>
 
-<p>
-  <strong>Calendar:</strong>
-  <ul>
-  <% @course.assignments.each do |a| %>
-    <li> <%= a.lecture_title %> </li>
-  <% end %>
-</p>
+    </div>
+
+    <br/>
+    <h2>Announcements</h2>
+
+    <div id="assignment-quick-list"></div>
+
+    <div id='announcements'>
+      <% if @course.announcements.length != 0 %>
+      <ol>
+        <% @course.announcements.each do |a| %>
+        <li>
+          <b>
+            <u><%= a.created_at%></u>
+          </b>
+          <br/>
+          <%= a.topic%>
+          <br/>
+          <%= a.content%>
+        </li>
+        <% end %>
+      </ol>
+    <% else %>
+      <h3>
+        There are no announcements yet.
+      </h3>
+      <%end%>
+    </div>
+
+    <br/>
+
+    <div>
+      <h2>Calendar</h2>
+
+      <div id="calendar-wrapper" class="table-responsive">
+
+        <table id="calendar" class="table">
+          <tbody>
+            <tr>
+
+              <th>Date</th>
+              <th>Lecture</th>
+              <th>Reading</th>
+              <th>Homework</th>
+              <th>Attachments</th>
+            </tr>
+            <tr class="odd">
+              <% if @course.assignments.length != 0 %>
+              <% @course.assignments.each do |a| %>
+              <td><%= a.LectureDate %></td>
+              <td><%= a.lecture_title %></td>
+              <br>
+
+              <td><%= a.reading %><br></td>
+
+              <td><%= a.homework %></td>
+
+              <td>
+                Temp
+              </td>
+              <% end %>
+            </tr>
+          <% else %>
+            <td>There</td>
+            <td>Are</td>
+            <br>
+            <td>No<br></td>
+            <td>Lessons</td>
+            <td>Yet.</td>
+            <% end %>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>

@@ -13,7 +13,11 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
+      <% if user_signed_in? %>
+      <a class="btn btn-outline-success my-2 my-sm-0" href="/courses" role="button">Courses</a>
+      <% else %>
       <a class="btn btn-outline-success my-2 my-sm-0" href="/users/sign_up" role="button">Register</a>
+      <% end %>
     </form>
   </div>
 </nav>
