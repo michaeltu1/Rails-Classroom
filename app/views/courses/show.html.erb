@@ -31,19 +31,13 @@
         <span class="content-title-brand"><%=@course.name%></span>
       </h1>
       <% if user_signed_in? %>
-      <p>Logged in as:
+      <p>Logged-in As:
         <%= current_user.email %>
       </p>
       <% end %>
-
-      <%=@course.semester%>
-      <br>
-
-      Instructor: temp
-      <br>
-      <%=@course.time%>
-      <br>
-
+      <p>Session: <%=@course.semester%> </p>
+      <p>Instructor: <%=@instructor.first_name%> <%=@instructor.last_name%> </p>
+      <p>Class Time: <%=@course.time%> </p>
     </div>
 
     <br/>
@@ -57,7 +51,7 @@
         <% @course.announcements.each do |a| %>
         <li>
           <b>
-            <u><%= a.created_at%></u>
+            <u><%= a.created_at.to_time.strftime('%B %e')%></u>
           </b>
           <br/>
           <%= a.topic%>
