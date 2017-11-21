@@ -1,8 +1,9 @@
 class AssignmentsController < ApplicationController
   before_action :set_assignment, only: [:show, :edit, :update, :destroy]
-
   # GET /assignments
   # GET /assignments.json
+  @@course_id
+
   def index
     @assignments = Assignment.all
   end
@@ -15,6 +16,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments/new
   def new
     @assignment = Assignment.new
+    @@course_id = params[:id]
   end
 
   # GET /assignments/1/edit
@@ -25,10 +27,11 @@ class AssignmentsController < ApplicationController
   # POST /assignments.json
   def create
     @assignment = Assignment.new(assignment_params)
-
+    @assignment.course_id = @@course_id
+    @course = Course.find(@@course_id)
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
+        format.html { redirect_to @course, notice: 'Assignment was successfully created.' }
         format.json { render :show, status: :created, location: @assignment }
       else
         format.html { render :new }

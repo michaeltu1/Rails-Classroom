@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/courses/:id', to:"courses#show"
   get '/newcourse', to: "courses#new"
   post '/newcourse', to: "courses#create"
+  get '/courses/:id/newassignment', to:"assignments#new"
+  post '/courses/:id/newassignment', to:"assignments#create", as:"newassignment"
 end

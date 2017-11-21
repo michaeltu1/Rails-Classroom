@@ -12,9 +12,8 @@
           </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/courses">New Assignments
+            <%= link_to "New Assignments", newassignment_path, class:"nav-link"%>
             <span class="sr-only">(current)</span>
-          </a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/courses">New Announcements
@@ -84,9 +83,9 @@
               <th>Homework</th>
               <th>Attachments</th>
             </tr>
+            <% if @course.assignments.length != 0 %>
+            <% @course.assignments.each do |a| %>
             <tr class="odd">
-              <% if @course.assignments.length != 0 %>
-              <% @course.assignments.each do |a| %>
               <td><%= a.LectureDate %></td>
               <td><%= a.lecture_title %></td>
               <br>
@@ -98,8 +97,8 @@
               <td>
                 Temp
               </td>
-              <% end %>
             </tr>
+              <% end %>
           <% else %>
             <td>There</td>
             <td>Are</td>
