@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post '/courses/:id/newassignment', to:"assignments#create", as:"newassignment"
   get '/courses/:id/newannouncement', to:"announcements#new"
   post '/courses/:id/newannouncement', to:"announcements#create", as:"newannouncement"
+  get '/invalidpermissions', to:"invalidpermissions#index", as:"invalidpermission"
 end

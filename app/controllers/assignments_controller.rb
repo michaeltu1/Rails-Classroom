@@ -15,9 +15,17 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/new
   def new
-    @assignment = Assignment.new
     @@course_id = params[:id]
-    @course = Course.find(@@course_id)
+    if current_user
+      if current_user.id === Course.find(@@course_id).user_id
+        @assignment = Assignment.new
+        @course = Course.find(@@course_id)
+      else
+        redirect_to invalidpermission_path
+      end
+    else
+      redirect_to invalidpermission_path
+    end
   end
 
   # GET /assignments/1/edit
