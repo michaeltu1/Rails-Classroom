@@ -16,4 +16,5 @@ class Course < ApplicationRecord
   has_and_belongs_to_many :users
   has_many :assignments
   has_many :announcements
+  validates_presence_of :name, :semester, :time, :school, :user_id
 end
