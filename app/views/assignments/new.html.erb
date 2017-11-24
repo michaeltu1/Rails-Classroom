@@ -16,6 +16,7 @@
   <%= f.text_field :reading %>
   <%= f.text_field :homework %>
   <%= f.text_field :lecture_date %>
+  <%= f.file_field :uploads, as: :file%>
   <%= f.submit "Create Assignment" %>
 <% end %>
 </div>

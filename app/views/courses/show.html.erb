@@ -92,9 +92,13 @@
 
               <td><%= a.homework %></td>
 
+              <% if a.uploads.exists? %>
               <td>
-                Temp
+                <%= link_to a.uploads_file_name, a.uploads.url %> 
               </td>
+              <% else %>
+              <td>None</td>
+              <% end %>
             </tr>
               <% end %>
           <% else %>

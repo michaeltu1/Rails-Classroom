@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171124212940) do
+ActiveRecord::Schema.define(version: 20171124222001) do
 
   create_table "announcements", force: :cascade do |t|
     t.string "topic"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20171124212940) do
     t.datetime "updated_at", null: false
     t.integer "course_id"
     t.string "lecture_date"
+    t.string "uploads_file_name"
+    t.string "uploads_content_type"
+    t.integer "uploads_file_size"
+    t.datetime "uploads_updated_at"
     t.index ["course_id"], name: "index_assignments_on_course_id"
   end
 

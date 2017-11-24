@@ -3,7 +3,7 @@
 # Table name: courses
 #
 #  id         :integer          not null, primary key
-#  name       :string
+#  classname  :string
 #  semester   :string
 #  time       :string
 #  school     :string
