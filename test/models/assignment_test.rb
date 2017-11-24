@@ -10,7 +10,7 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  course_id            :integer
-#  lecture_date         :string
+#  LectureDate          :string
 #  uploads_file_name    :string
 #  uploads_content_type :string
 #  uploads_file_size    :integer
