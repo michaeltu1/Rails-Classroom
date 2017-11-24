@@ -30,6 +30,7 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.new(assignment_params)
     @assignment.course_id = @@course_id
     @course = Course.find(@@course_id)
+    puts assignment_params
     respond_to do |format|
       if @assignment.save
         format.html { redirect_to @course, notice: 'Assignment was successfully created.' }
@@ -73,6 +74,6 @@ class AssignmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:lecture_title, :reading, :homework, :attachment)
+      params.require(:assignment).permit(:lecture_title, :reading, :homework, :attachment, :lecture_date, :course_id)
     end
 end

@@ -15,5 +15,5 @@
 
 class Assignment < ApplicationRecord
   belongs_to :course
-  validates_presence_of :lecture_title, :lecture_date
+  validates_presence_of :lecture_title, :lecture_date, :course_id
 end
