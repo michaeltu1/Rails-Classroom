@@ -2,10 +2,6 @@
 <br/>
 <br/>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="/courses"><%=@course.name%></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
@@ -29,7 +25,7 @@
 
     <div class="page-header">
       <h1>
-        <span class="content-title-brand"><%=@course.name%></span>
+        <span class="content-title-brand"><%=@course.classname%></span>
       </h1>
       <% if user_signed_in? %>
       <p>Logged-in As:
