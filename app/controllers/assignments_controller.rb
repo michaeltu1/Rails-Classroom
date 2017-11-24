@@ -17,6 +17,7 @@ class AssignmentsController < ApplicationController
   def new
     @assignment = Assignment.new
     @@course_id = params[:id]
+    @course = Course.find(@@course_id)
   end
 
   # GET /assignments/1/edit

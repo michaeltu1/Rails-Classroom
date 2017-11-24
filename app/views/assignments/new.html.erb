@@ -1,5 +1,21 @@
-<h1>New Assignment</h1>
 
-<%= render 'form', assignment: @assignment %>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <%= link_to "#{@course.name}", course_path(id=@course.id), class:"navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+<br/><br/>
 
-<%= link_to 'Back', assignments_path %>
+<div style="padding:30px">
+<h3> Please fill out the form below to create an assignment for your class! </h3>
+<br/>
+
+<%= bootstrap_form_for(@assignment) do |f| %>
+  <%= f.text_field :lecture_title %>
+  <%= f.text_field :reading %>
+  <%= f.text_field :homework %>
+  <%= f.text_field :lecture_date %>
+  <%= f.submit "Create Assignment" %>
+<% end %>
+</div>
