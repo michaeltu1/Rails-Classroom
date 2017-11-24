@@ -7,6 +7,8 @@
     <form class="form-inline my-2 my-lg-0">
       <% if user_signed_in? %>
       <a class="btn btn-outline-success my-2 my-sm-0" href="/courses/new" role="button">Create Course</a>
+    &nbsp;&nbsp;
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, :class =>"btn btn-outline-success my-2 my-sm-0" ) %>
       <% else %>
       <a class="btn btn-outline-success my-2 my-sm-0" href="/users/sign_in" role="button">Sign In</a>
       <% end %>
