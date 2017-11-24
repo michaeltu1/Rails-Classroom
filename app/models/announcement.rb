@@ -12,4 +12,5 @@
 
 class Announcement < ApplicationRecord
   belongs_to :course
+  validates_presence_of :topic, :content, :course_id
 end

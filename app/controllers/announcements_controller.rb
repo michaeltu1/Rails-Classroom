@@ -16,6 +16,7 @@ class AnnouncementsController < ApplicationController
   def new
     @announcement = Announcement.new
     @@course_id = params[:id]
+    @course = Course.find(@@course_id)
   end
 
   # GET /announcements/1/edit

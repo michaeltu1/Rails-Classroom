@@ -1,5 +1,24 @@
-<h1>New Announcement</h1>
+<!-- <h1>New Announcement</h1>
 
 <%= render 'form', announcement: @announcement %>
 
-<%= link_to 'Back', announcements_path %>
+<%= link_to 'Back', announcements_path %> -->
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <%= link_to "#{@course.name}", course_path(), class:"navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+<br/><br/>
+
+<div style="padding:30px">
+<h3> Please fill out the form below to create an announcement for your class! </h3>
+<br/>
+
+<%= bootstrap_form_for(@announcement) do |f| %>
+  <%= f.text_field :topic %>
+  <%= f.text_field :content %>
+  <%= f.submit "Create Announcement" %>
+<% end %>
+</div>
