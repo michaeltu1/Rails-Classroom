@@ -84,11 +84,12 @@ Rails.application.configure do
     s3_region: ENV["AWS_S3_REGION"],
     s3_credentials: {
       s3_host_name: ENV["AWS_S3_HOST_NAME"],
-      bucket: ENV["AWS_S3_BUCKET"],
+      bucket: ENV["S3_BUCKET_NAME"],
       access_key_id: ENV["AWS_ACCESS_KEY_ID"],
       secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
+      region: ENV["AWS_REGION"]
       }
-    } 
+    }
 
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
