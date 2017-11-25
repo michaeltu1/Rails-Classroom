@@ -82,7 +82,7 @@
               <th>Attachments</th>
             </tr>
             <% if @course.assignments.length != 0 %>
-            <% @course.assignments.each do |a| %>
+            <% @course.assignments.reverse_each do |a| %>
             <tr class="odd">
               <td><%= a.lecture_date %></td>
               <td><%= a.lecture_title %></td>
@@ -94,7 +94,7 @@
 
               <% if a.uploads.exists? %>
               <td>
-                <%= link_to a.uploads_file_name, a.uploads.url %> 
+                <%= link_to a.uploads_file_name, a.uploads.url %>
               </td>
               <% else %>
               <td>None</td>
