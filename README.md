@@ -8,7 +8,7 @@ Steps:
 4) run "rake db:seed"
 
 # Rails Decal Fall 17 | Final Project Writeup
------
+
 ##### Title: 
 Rails Classroom 
 
@@ -38,7 +38,7 @@ A classroom application that serves as a course-page builder where teachers can 
 * Built using Devise gem, has multiple courses (be instructors to many different courses).
 
 ##### Features:
-* Users can log i
+* Users can log in
 * Users who create courses are instructors. Instructors can create assignments and announcements for each of their courses.
 * All users (logged-in or not) can view the course pages for all courses and can see announcements and assignments made by instructors for each of those courses. 
 
