@@ -1,4 +1,11 @@
-# Rails Classroom -- An online-education focused course-page builder for educators. 
+# Rails Classroom -- An online-education focused course-page builder for educators.
+
+Steps:
+-----
+1) run "rake db:drop:all"
+2) run "rake db:migrate"
+3) run the server and register for an user account
+4) run "rake db:seed"
 
 Home Page
 -----
