@@ -48,7 +48,8 @@ A classroom application that serves as a course-page builder where teachers can 
 * Naomi Jung: Created Courses model as well as views and corresponding routes.
 * Kevin Pham: Created Announcements model as well as views for the forms and corresponding routes.
 
- 
+##### Credits:
+UI Inspiration from UC Berkeley's CS61B Course Webpage: http://inst.eecs.berkeley.edu/~cs61b/fa17/
 
 
 Home Page
