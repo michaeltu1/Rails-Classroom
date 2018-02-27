@@ -1,4 +1,4 @@
-# Rails Classroom -- An online-education focused course-page builder for educators.
+# Rails Classroom: An education management platform facilitating online student-teacher interaction.
 
 Steps:
 -----
@@ -7,7 +7,7 @@ Steps:
 3) run the server and register for an user account
 4) run "rake db:seed"
 
-# Rails Decal Fall 17 | Final Project Writeup
+# Fall 17 | Ruby on Rails
 
 ##### Title: 
 Rails Classroom 
