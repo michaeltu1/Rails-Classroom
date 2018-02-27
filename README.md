@@ -7,7 +7,7 @@ Steps:
 3) run the server and register for an user account
 4) run "rake db:seed"
 
-# Fall 17 | Ruby on Rails
+# Fall 2017 | Ruby on Rails
 
 ##### Title: 
 Rails Classroom 
